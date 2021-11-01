@@ -41,7 +41,7 @@ services:
       PMA_HOST: db
 
   portainer:
-    image: portainer/portainer
+    image: portainer/portainer-ce:latest
     command: -H unix:///var/run/docker.sock
     restart: always
     ports:

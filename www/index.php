@@ -18,12 +18,12 @@
         <?php
 
 // Connexion et sélection de la base
-$conn = mysqli_connect('db', 'root', '12345678', "myDb");
+        $conn = mysqli_connect('db', 'root', '12345678', "myDb");
 
-$query = 'SELECT * From Person';
-$result = mysqli_query($conn, $query);
-$query1 = 'SELECT * From users';
-$result1 = mysqli_query($conn, $query1);
+        $query = 'SELECT * From Person';
+        $result = mysqli_query($conn, $query);
+        $query1 = 'SELECT * From users';
+        $result1 = mysqli_query($conn, $query1);
 
 if (mysqli_num_rows($result1) > 0) {
 
