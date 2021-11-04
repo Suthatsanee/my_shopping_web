@@ -10,7 +10,7 @@
 </script>
 
 <?php
-session_start();
+// session_start();
 require('config/config.php');
 $orderid = $_SESSION["Orders"];
 $name1 = $_POST["name1"];
