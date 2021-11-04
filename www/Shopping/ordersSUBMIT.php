@@ -24,7 +24,7 @@ if(isset($_POST['orderok'])){
 		$item_total = 0;
 	foreach ($_SESSION["cart_item"] as $item){
 		$item_total +=($item["price"]*$item["quantity"]);
-		$pricetotal = $item_total +($item_total*0.07);
+		$pricetotal = intval($item_total) + intval(($item_total*0.07));
 		$procode = $item["code"];
 		$unit = $item["quantity"];
 		$sqlin = "INSERT INTO orderproduct (id, ordersid, procode, unit1, price1)  VALUES('','$orderid','$procode','$unit','$item_total')";
