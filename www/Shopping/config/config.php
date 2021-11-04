@@ -1,5 +1,7 @@
 <?php
-$server_name = "localhost";
+// $server_name = "localhost";
+$server_name = "db";
+
 $server_user = "root";
 $server_pass = "12345678";
 $server_db = "web";

@@ -1,24 +1,25 @@
 <?php
 class DBController {
-	//¡ÓË¹´¤èÒµèÒ§æÊÓËÃÑº¡ÒÃàª×èÍÁµèÍ°Ò¹¢éÍÁÙÅ
-	private $host = "localhost";	
+	//ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½Òµï¿½Ò§ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í°Ò¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// private $host = "localhost";
+	 private $host = "db";
 	private $user = "root";
 	private $password = "12345678";
 	private $database = "web";
 	private $conn;
 	
-	//àÃÔèÁµé¹âËÅ´ä¿ÅìãËéàÅ×Í¡¿Ñ§ªÑè¹àª×èÍÁµèÍ°Ò¹¢éÍÁÙÅ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¡ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í°Ò¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	function __construct() {
 		$this->conn = $this->connectDB();
 	}
 	
-	//¿Ñ§ªÑè¹ÊÓËÃÑº¡ÒÃàª×èÍÁµèÍ°Ò¹¢éÍÁÙÅ
+	//ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í°Ò¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	function connectDB() {
 		$conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
 		return $conn;
 	}
 	
-	//¿Ñ§ªÑè¹ÊÓËÃÑº¡ÒÃ¤ÔÇÃÕè¢éÍÁÙÅ
+	//ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½ï¿½Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	function runQuery($query) {
 		$result = mysqli_query($this->conn,$query);
 		while($row = mysqli_fetch_assoc($result)) {
@@ -28,7 +29,7 @@ class DBController {
 			return $resultset;
 	}
 	
-	//¿Ñ§ªÑè¹ÊÓËÃÑº¡ÒÃ¹Ñº¨Ó¹Ç¹á¶Ç
+	//ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½ï¿½Ã¹Ñºï¿½Ó¹Ç¹ï¿½ï¿½
 	function numRows($query) {
 		$result = mysqli_query($this->conn,$query);
 		$rowcount = mysqli_num_rows($result);
