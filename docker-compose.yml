@@ -24,10 +24,10 @@ services:
     networks:
       - lamp_network
     environment:
-      MYSQL_DATABASE: myDb
+      MYSQL_DATABASE: web
       MYSQL_ROOT_PASSWORD: 12345678
 
-  app:
+  phpmyadmin:
     depends_on:
       - db
     image: phpmyadmin/phpmyadmin
